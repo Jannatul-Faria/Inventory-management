@@ -26,7 +26,7 @@ class User extends Model
 
     protected $attributes = [
         'otp' => '0',
-        'checkbox'=> '0',
-        
+        'checkbox' => '0',
+
     ];
 }

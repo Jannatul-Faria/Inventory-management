@@ -13,23 +13,21 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name',50);
-             $table->string('email',50);
-            $table->string('mobile',13);
+            $table->string('name', 50);
+            $table->string('email', 50);
+            $table->string('mobile', 13);
             $table->string('class');
             $table->string('password');
             $table->string('otp');
-            $table->string('address',100);
+            $table->string('address', 100);
             $table->string('state');
             $table->string('zip');
             $table->string('image')->nullable();
             $table->string('gender');
             $table->string('checkbox');
-           
-
 
             $table->timestamp('created_at')->useCurrent();
-             $table->timestamp('updated_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 
