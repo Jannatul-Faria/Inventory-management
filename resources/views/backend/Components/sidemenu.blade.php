@@ -86,7 +86,7 @@
             </a>
         </li>
 
-        <li>
+        {{-- <li>
             <a href="{{ route('profile') }}">
                 <i class="zmdi zmdi-face"></i> <span>Profile</span>
             </a>
@@ -102,7 +102,7 @@
             <a href="{{ route('register') }}" target="_blank">
                 <i class="zmdi zmdi-account-circle"></i> <span>Registration</span>
             </a>
-        </li>
+        </li> --}}
 
         <li class="sidebar-header">LABELS</li>
         <li><a href="javaScript:void();"><i class="zmdi zmdi-coffee text-danger"></i> <span>Important</span></a></li>

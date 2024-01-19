@@ -2,20 +2,38 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ImageController;
+use App\Http\Middleware\TokenVerifyMiddleware;
 use App\Http\Controllers\Backend\AlbumController;
 use App\Http\Controllers\Backend\PhotoController;
 
 
 
 Route::group(['prefix'=>'admin', 'as' => 'admin.'], function () {
-    Route::get('/', [AdminController::class, 'dashboard'])->name('dashboard');
+     //======================================================================
+    //                         Pages Routes 
+    //========================================================================
+    Route::get('/userprofile', [UserController::class, 'userprofile'])->name('profile');
+
+    Route::get('/', [AdminController::class, 'dashboard'])->name('dashboard')->Middleware([TokenVerifyMiddleware::class]);
     Route::get('/tasks', [AdminController::class, 'task'])->name('tasks');
     Route::get('/calender', [AdminController::class, 'calender'])->name('calender');
     Route::get('/icons', [AdminController::class, 'icons'])->name('icons');
     Route::get('/forms', [AdminController::class, 'forms'])->name('forms');
     Route::get('/tables', [AdminController::class, 'tables'])->name('tables');
+    //=========================================================================
+
+    //================================Api Authntication=================================
+    Route::post('/userLogin', [UserController::class, 'userLogin']);
+    Route::post('/userRegister', [UserController::class, 'userRegister']);
+    Route::post('/sendOtp', [UserController::class, 'sendOtp']);
+    Route::post('/varifyOtp', [UserController::class, 'varifyOtp']);
+    Route::post('/passwordReset', [UserController::class, 'passwordReset'])->middleware([TokenVerifyMiddleware::class]);
+    Route::get('/userprofile', [UserController::class, 'userprofile'])->middleware([TokenVerifyMiddleware::class]);
+    Route::post('/updateprofile', [UserController::class, 'updateprofile'])->Middleware([TokenVerifyMiddleware::class]);
+
 
     //================== image upload:======================
     Route::get('/imageUplode', [AdminController::class, 'imageUplode'])->name('imageUplode');
@@ -38,8 +56,12 @@ Route::group(['prefix'=>'admin', 'as' => 'admin.'], function () {
    
 });
 
-
-    Route::get('/login', [AdminController::class, 'login'])->name('login');
-    Route::get('/profile', [AdminController::class, 'profile'])->name('profile');
-    Route::get('/register', [AdminController::class, 'register'])->name('register');
-    Route::get('/reset', [AdminController::class, 'reset'])->name('reset');
+//=================== =============Auth-Pages=============================
+   
+    Route::get('/profile', [UserController::class, 'profilePage'])->Middleware([TokenVerifyMiddleware::class]);
+    Route::get('/login', [UserController::class, 'userLoginPage']);
+    Route::get('/register', [UserController::class, 'userRegisterPage']);
+    Route::get('/sendOtp', [UserController::class, 'sendOtpPage']);
+    Route::get('/varifyOtp', [UserController::class, 'varifyOtpPage']);
+    Route::get('/passwordReset', [UserController::class, 'passwordResetPage']);
+    Route::get('/logout', [UserController::class, 'logout']);

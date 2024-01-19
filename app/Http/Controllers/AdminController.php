@@ -30,22 +30,22 @@ class AdminController extends Controller
     {
         return view('backend.forms');
     }
-    public function login()
-    {
-        return view('backend.login');
-    }
-    public function profile()
-    {
-        return view('backend.profile');
-    }
-    public function register()
-    {
-        return view('backend.register');
-    }
-    public function reset()
-    {
-        return view('backend.reset');
-    }
+    // public function login()
+    // {
+    //     return view('backend.login');
+    // }
+    // public function profile()
+    // {
+    //     return view('backend.profile');
+    // }
+    // public function register()
+    // {
+    //     return view('backend.register');
+    // }
+    // public function reset()
+    // {
+    //     return view('backend.reset');
+    // }
     public function tables()
     {
         return view('backend.tables');

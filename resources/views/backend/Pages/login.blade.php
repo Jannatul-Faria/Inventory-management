@@ -15,9 +15,9 @@
             <div class="card-title text-uppercase text-center py-3">Login In</div>
             <form>
                 <div class="form-group">
-                    <label for="exampleInputUsername" class="sr-only">Username</label>
+                    <label for="name" class="sr-only">Username</label>
                     <div class="position-relative has-icon-right">
-                        <input type="text" id="exampleInputUsername" class="form-control input-shadow"
+                        <input type="text" id="name" class="form-control input-shadow"
                             placeholder="Enter Username">
                         <div class="form-control-position">
                             <i class="icon-user"></i>
@@ -25,9 +25,9 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword" class="sr-only">Password</label>
+                    <label for="password" class="sr-only">Password</label>
                     <div class="position-relative has-icon-right">
-                        <input type="password" id="exampleInputPassword" class="form-control input-shadow"
+                        <input type="password" id="password" class="form-control input-shadow"
                             placeholder="Enter Password">
                         <div class="form-control-position">
                             <i class="icon-lock"></i>
@@ -42,7 +42,7 @@
                         </div>
                     </div>
                     <div class="form-group col-6 text-right">
-                        <a href="reset-password.html">Reset Password</a>
+                        <a href="{{ url('/passwordReset') }}">Reset Password</a>
                     </div>
                 </div>
                 <button type="button" class="btn btn-light btn-block">Sign In</button>
@@ -63,7 +63,7 @@
         </div>
     </div>
     <div class="card-footer text-center py-3">
-        <p class="text-warning mb-0">Do not have an account? <a href="{{ route('register') }}"> Sign Up here</a>
+        <p class="text-warning mb-0">Do not have an account? <a href="{{ url('/register') }}"> Sign Up here</a>
         </p>
     </div>
 </div>

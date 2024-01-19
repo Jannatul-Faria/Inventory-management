@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('address',100);
             $table->string('state');
             $table->string('zip');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->string('gender');
             $table->string('checkbox');
            
