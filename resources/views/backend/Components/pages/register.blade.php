@@ -15,7 +15,7 @@
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="text" class="form-control" id="email"
+                            <input type="email" class="form-control" id="email"
                                 placeholder="Enter Your Email Address" name="email">
                         </div>
                         <div class="form-group">
@@ -121,6 +121,6 @@
 <!--End Row-->
 
 <div class="card-footer text-center py-3">
-    <p class="text-warning mb-0">Already have an account? <a href="{{ route('login') }}"> Sign In here</a></p>
+    <p class="text-warning mb-0">Already have an account? <a href="{{ url('/login') }}"> Sign In here</a></p>
 </div>
 </div>

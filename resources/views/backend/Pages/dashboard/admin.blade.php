@@ -1,4 +1,4 @@
 @extends('backend.Layouts.app')
 @section('content')
-    @include('backend.Pages.reset')
+    @include('backend.Components.Pages.body')
 @endsection

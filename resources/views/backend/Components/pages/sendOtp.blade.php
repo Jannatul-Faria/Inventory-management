@@ -17,12 +17,12 @@
                         </div>
                     </div>
 
-                    <button type="button" class="btn btn-light btn-block mt-3">Reset Password</button>
+                    <button type="button" class="btn btn-light btn-block mt-3">Send otp</button>
                 </form>
             </div>
         </div>
         <div class="card-footer text-center py-3">
-            <p class="text-warning mb-0">Return to the <a href="{{ route('admin') }}"> Sign In</a></p>
+            <p class="text-warning mb-0">Return to the <a href="{{ url('/login') }}"> Sign In</a></p>
         </div>
     </div>
 </div>

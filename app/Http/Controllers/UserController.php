@@ -11,14 +11,24 @@ use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
+    public function userRegisterPage(Request $request)
+    {
+        return view('backend.Pages.auth.register');
+    }
+
     public function userLoginPage()
     {
-        return view('backend.login');
+        return view('backend.Pages.auth.login');
     }
 
     public function varifyOtpPage(Request $request)
     {
-        return view('backend.Pages.varifyOtp');
+        return view('backend.Components.pages.varifyOtp');
+    }
+
+    public function sendOtpPage(Request $request)
+    {
+        return view('backend.Pages.auth.sendOtp');
     }
 
     public function userRegister(Request $request)
@@ -65,6 +75,7 @@ class UserController extends Controller
 
     public function userLogin(Request $request)
     {
+
         $count = User::where('email', '=', $request->input('email'))
             ->where('password', '=', $request->input('password'))
             ->select('id')->first();
@@ -75,7 +86,7 @@ class UserController extends Controller
             return response()->json([
                 'status' => 'success',
                 'message' => 'User Login Successfully.',
-                'token' => $token,
+                // 'token' => $token,
             ])->cookie('token', $token, 60 * 24 * 30);
         } else {
             return response()->json([

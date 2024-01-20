@@ -6,32 +6,32 @@ class AdminController extends Controller
 {
     public function dashboard()
     {
-        return view('backend.admin');
+        return view('backend.Pages.dashboard.admin');
     }
 
     public function task()
     {
-        return view('backend.task');
+        return view('backend.Pages.dashboard.task');
     }
 
     public function imageUplode()
     {
-        return view('backend.images');
+        return view('backend.Pages.dashboard.images');
     }
 
     public function calender()
     {
-        return view('backend.calender');
+        return view('backend.Pages.dashboard.calender');
     }
 
     public function icons()
     {
-        return view('backend.icons');
+        return view('backend.Pages.dashboard.icons');
     }
 
     public function forms()
     {
-        return view('backend.forms');
+        return view('backend.Pages.dashboard.forms');
     }
 
     // public function profile()

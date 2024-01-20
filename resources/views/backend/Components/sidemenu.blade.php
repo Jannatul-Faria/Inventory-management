@@ -1,7 +1,7 @@
 <!--Start sidebar-wrapper-->
 <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
     <div class="brand-logo">
-        <a href="{{ route('admin.dashboard') }}">
+        <a href="{{ url('dashboard') }}">
             <img src="{{ asset('assets/images') }}/favicon2.png" class="logo-icon" alt="logo icon">
             <h5 class="logo-text">Jannatul Faria</h5>
         </a>
@@ -11,7 +11,7 @@
 
 
         <li>
-            <a href="{{ route('admin.dashboard') }}">
+            <a href="{{ url('dashboard') }}">
                 <i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
             </a>
         </li>
@@ -43,10 +43,10 @@
 
 
             <ul class="sidebar-menu do-nicescrol dropdown-menu">
-                <li class="dropdown-item" href="#"> <a href="{{ route('admin.gallary') }}">
+                <li class="dropdown-item" href="#"> <a href="{{ url('admin/gallary') }}">
                         <i class="zmdi zmdi-collection-folder-image"></i><span>Albums</span>
                     </a></li>
-                <li class="dropdown-item" href="#"><a href="{{ route('admin.imageUplode') }}">
+                <li class="dropdown-item" href="#"><a href="{{ url('admin/imageUplode') }}">
                         <i class="zmdi zmdi-image"></i><span>images-uplode</span>
                     </a></li>
 
@@ -54,7 +54,7 @@
         </li>
 
         <li>
-            <a href="{{ route('admin.tasks') }}">
+            <a href="{{ url('admin/tasks') }}">
                 <i class="zmdi zmdi-assignment-check"></i> <span>tasks</span>
             </a>
         </li>
@@ -62,12 +62,12 @@
 
 
         <li>
-            <a href="{{ route('admin.icons') }}">
+            <a href="{{ url('admin/icons') }}">
                 <i class="zmdi zmdi-invert-colors"></i> <span>UI Icons</span>
             </a>
         </li>
 
-        <li>
+        {{-- <li>
             <a href="{{ route('admin.forms') }}">
                 <i class="zmdi zmdi-format-list-bulleted"></i> <span>Forms</span>
             </a>
@@ -84,7 +84,7 @@
                 <i class="zmdi zmdi-calendar"></i> <span>Calendar</span>
                 <small class="badge float-right badge-light">New</small>
             </a>
-        </li>
+        </li> --}}
 
         {{-- <li>
             <a href="{{ route('profile') }}">
